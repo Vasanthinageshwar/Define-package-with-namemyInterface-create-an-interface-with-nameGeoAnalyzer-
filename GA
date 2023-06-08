@@ -1,0 +1,126 @@
+Define a package with name myInterface and create an interface with name GeoAnalyzer
+which contains methods such as area(), perimeter() and pi value as 3.142F. Create three
+class with names Circle, Ellipse, and Rectangle with display method to display respective
+area and perimeter of objects by implementing GeoAnalyzer.
+
+package myInterface;
+interface GeoAnalyzer {
+final static float pi = 3.142F;
+float area();
+float perimeter();
+}
+
+CODE:
+
+Rectangle:
+package myInterface;
+public class Rectangle implements GeoAnalyzer
+{
+double a3,p3;
+double len,breadth;
+public Rectangle(double l,double b)
+{
+len=l;
+breadth=b;
+}
+public double area()
+{
+a3=len*breadth;
+return a3;
+}
+public double perimeter()
+{
+p3=2*(len+breadth);
+return p3;
+}
+public void display()
+{
+System.out.println(&quot;Rectangle Area = &quot;+area());
+System.out.println(&quot;Perimeter = &quot;+perimeter());
+
+}
+}
+
+Ellipse:
+package myInterface;
+public class Ellipse implements GeoAnalyzer
+{
+double a,b;
+double a2,p2;
+public Ellipse(double s1,double s2)
+{
+a=s1;
+b=s2;
+}
+public double area()
+{
+a2=pi*a*b;
+return a2;
+}
+public double perimeter()
+{
+p2=pi*(a+b);
+return p2;
+}
+public void display()
+{
+System.out.println(&quot;Ellipse Area = &quot;+area());
+System.out.println(&quot;Perimeter = &quot;+perimeter());
+
+}
+}
+
+GeoAnalyzer
+package myInterface;
+public interface GeoAnalyzer
+{
+final static float pi=3.142F;
+double area();
+double perimeter();
+}
+Circle
+package myInterface;
+public class Circle implements GeoAnalyzer
+{
+
+double r;
+double a1,p1;
+final static float pi=3.142F;
+public Circle(double radius)
+{
+r=radius;
+}
+public double area()
+{
+a1=pi*r*r;
+return a1;
+}
+public double perimeter()
+{
+p1=2*pi*r;
+return p1;
+
+}
+public void display()
+{
+System.out.println(&quot;Circle Area = &quot;+area());
+System.out.println(&quot;Perimeter = &quot;+perimeter());
+}
+
+}
+Sample
+import myInterface.Rectangle;
+import myInterface.Ellipse;
+import myInterface.Circle;
+class Sample
+{
+public static void main(String[] args)
+{
+Rectangle r1=new Rectangle(5,5.59);
+Ellipse e1=new Ellipse(5,10.18008);
+Circle c1=new Circle(5.2);
+c1.display();
+e1.display();
+r1.display();
+}
+}
